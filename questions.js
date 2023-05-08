@@ -437,4 +437,25 @@ const findThirdHighest = (arr) => {
 }
 
 
-console.log(findThirdHighest(['a', 'b']));
+// console.log(findThirdHighest(['a', 'b']));
+
+
+const countVowelsAndConsonants = (str) => {
+
+    if (str.length < 1) return 'Invalid string!'
+
+    const vowels = ['a', 'e', 'i', 'o', 'u']
+
+    let vowelCount = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+            vowelCount++;
+        }
+    }
+
+    return `Number of vowels: ${vowelCount} and number of consonants: ${str.length - vowelCount}`;
+}
+
+
+console.log(countVowelsAndConsonants('aeiossssu'));
