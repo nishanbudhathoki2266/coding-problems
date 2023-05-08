@@ -395,5 +395,22 @@ const restrictTo = (...roles) => {
     return "Welcome!"
 }
 
-
 // console.log(restrictTo('user'));
+
+
+const rotateArray = (arr, k) => {
+    const rotatingArr = [];
+
+    for (let i = arr.length - k; i < arr.length; i++) {
+        rotatingArr.push(arr[i]);
+    }
+
+    arr.splice(arr.length - k, k)
+
+
+    return [...rotatingArr, ...arr];
+
+}
+
+
+console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 2))
