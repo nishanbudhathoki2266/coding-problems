@@ -418,6 +418,8 @@ const rotateArray = (arr, k) => {
 
 const findThirdHighest = (arr) => {
 
+    if (arr.length < 3) return `Array length insufficient`
+
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr.length; j++) {
             if (i === j) continue;
@@ -435,4 +437,4 @@ const findThirdHighest = (arr) => {
 }
 
 
-console.log(findThirdHighest([100, 3, 4, 67, 2, 10, 0, 92]));
+console.log(findThirdHighest(['a', 'b']));
