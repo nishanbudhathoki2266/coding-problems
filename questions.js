@@ -413,4 +413,26 @@ const rotateArray = (arr, k) => {
 }
 
 
-console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 2))
+// console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 2))
+
+
+const findThirdHighest = (arr) => {
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (i === j) continue;
+
+            if (arr[j] > arr[i]) {
+                let temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+
+    return arr[arr.length - 3];
+
+}
+
+
+console.log(findThirdHighest([100, 3, 4, 67, 2, 10, 0, 92]));
