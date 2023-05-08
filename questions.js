@@ -384,3 +384,16 @@ const longestSubstring = (str) => {
 // console.log(longestSubstring('ABDEFGABEF'));
 
 // console.log(new Set('STRINGS'));
+
+// Restrict some access acc to roles 
+const role = 'user'
+const restrictTo = (...roles) => {
+    if (!roles.includes(role)) {
+        return "Permission denied!"
+    }
+
+    return "Welcome!"
+}
+
+
+// console.log(restrictTo('user'));
