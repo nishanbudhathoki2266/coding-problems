@@ -458,4 +458,41 @@ const countVowelsAndConsonants = (str) => {
 }
 
 
-console.log(countVowelsAndConsonants('aeiossssu'));
+// console.log(countVowelsAndConsonants('aeiossssu'));
+
+const fib = (num) => {
+    const fiba = [0, 1, 1];
+
+    for (let i = 3; i <= num; i++) {
+        fiba[i] = fiba[i - 1] + fiba[i - 2]
+    }
+
+    return fiba;
+}
+
+
+// console.log(fib(5));
+
+const fizzBuzz = () => {
+    const num = 100;
+    for (let i = 1; i <= num; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        }
+
+        else if (i % 3 === 0) {
+            console.log("Fizz");
+        }
+
+        else if (i % 3 === 0) {
+            console.log("Buzz");
+        }
+
+        else {
+            console.log(i);
+        }
+    }
+}
+
+
+console.log(fizzBuzz());
