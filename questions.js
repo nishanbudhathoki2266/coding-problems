@@ -495,4 +495,207 @@ const fizzBuzz = () => {
 }
 
 
-console.log(fizzBuzz());
+// console.log(fizzBuzz());
+
+
+const findDuplicate = (arr) => {
+    const numberCount = {};
+    let hasRepeated = false;
+
+    for (let i = 0; i < arr.length; i++) {
+        numberCount[arr[i]] = 1;
+        for (let j = 0; j < arr.length; j++) {
+            if (i === j) {
+                continue;
+            }
+
+            if (arr[i] === arr[j]) {
+                numberCount[arr[i]]++;
+                hasRepeated = true;
+            }
+        }
+    }
+    if (hasRepeated) {
+        return numberCount;
+    }
+
+    else if (!hasRepeated) {
+        return `There is no any numbers repeated!`;
+    }
+
+}
+
+
+
+// console.log(findDuplicate([1, 23, 4, 5, 6]));
+
+
+let str = ''
+
+// for (let i = 1; i <= 5; i++) {
+//     for (let j = 0; j < i; j++) {
+//         str += '*';
+//     }
+//     str += "\n";
+// }
+
+
+
+// ***** **** *** ** *
+
+// for (let i = 5; i > 0; i--) {
+//     for (let j = 1; j <= i; j++) {
+//         str += '*';
+//     }
+//     str += "\n";
+// }
+
+// console.log(str);
+
+
+
+
+
+const prinStars = (num) => {
+    let string = '';
+
+    // for (let i = 1; i <= num; i++) {
+    //     for (let j = 0; j < i; j++) {
+    //         string += '*';
+    //     }
+
+    //     string += '\n';
+    // }
+
+    for (let i = num; i > 0; i--) {
+        for (let j = 1; j <= i; j++) {
+            string += "*"
+        }
+
+        string += "\n";
+    }
+
+    return string;
+}
+
+
+
+// console.log(prinStars(5));
+
+const fibonaci = (num) => {
+    const fib = [0, 1];
+
+
+    if (num < 2) {
+        return `Please enter a number higher than 2`;
+    }
+
+
+    for (let i = 2; i < num; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    return fib;
+}
+
+
+// console.log(fibonaci(5));
+
+const prime = (num) => {
+    if (num < 2) {
+        return false;
+    }
+
+    else {
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+
+// console.log(prime(7));
+
+const subString = (str) => {
+    const allChar = {}
+
+    for (let i = 0; i < str.length; i++) {
+        allChar[str[i]] = 1;
+    }
+
+    const uniqueNum = [];
+
+    for (key of Object.keys(allChar)) {
+        uniqueNum.push(key);
+    }
+
+    return `${uniqueNum.join('')}`;
+
+}
+
+// console.log(subString('aaaabbbbbbcbbcc'));
+
+const sorted = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (i === j) continue;
+
+            if (arr[j] > arr[i]) {
+                let temp = arr[j];
+
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+// console.log(sorted([2, 3, 0, 1]));
+
+
+// console.log(longestSubstring('ABDEFGABEF'));
+
+
+// aaabbbcc a3b3c2
+
+
+const strCount = (str) => {
+    let finalStr = '';
+    let count = 1;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i + 1]) {
+            count++;
+        }
+
+        else {
+            finalStr += `${str[i]}${count}`;
+            count = 1;
+        }
+    }
+    return finalStr;
+}
+
+// console.log(strCount('aaaabbbbccccaaa'));
+
+
+
+const fact = (num) => {
+    let fact = 1;
+    if (num < 1) {
+        return 0;
+    }
+
+    for (let i = num; i > 0; i--) {
+        fact *= i;
+    }
+
+    return fact;
+}
+
+
+console.log(fact(1));
